@@ -79,7 +79,6 @@ func (socket *Socket) setConnectionOptions() {
 
 func (socket *Socket) Connect() {
 	var err error;
-	var resp *http.Response
 	socket.setConnectionOptions()
 
 	socket.Conn, _, err = socket.WebsocketDialer.Dial(socket.Url, socket.RequestHeader)
