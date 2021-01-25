@@ -82,7 +82,7 @@ func (socket *Socket) Connect() {
 	var resp *http.Response
 	socket.setConnectionOptions()
 
-	socket.Conn, resp, err = socket.WebsocketDialer.Dial(socket.Url, socket.RequestHeader)
+	socket.Conn, _, err = socket.WebsocketDialer.Dial(socket.Url, socket.RequestHeader)
 
 	if err != nil {
 		logger.Error.Println("Error while connecting to server ", err)
